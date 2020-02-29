@@ -35,6 +35,12 @@ function getUint32Pairs() {
       bufferDecoder: createBufferDecoder(0xFF, 0xFF, 0xFF, 0xFF, 0x0F),
     },
     {
+      name: 'negative one',
+      intValue: -1,
+      bufferDecoder: createBufferDecoder(0xFF, 0xFF, 0xFF, 0xFF, 0x0F),
+      skip_reader: true,
+    },
+    {
       name: 'truncates more than 32 bits',
       intValue: Math.pow(2, 32) - 1,
       bufferDecoder: createBufferDecoder(0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x01),
